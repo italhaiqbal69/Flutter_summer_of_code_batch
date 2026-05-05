@@ -5,12 +5,14 @@ import 'package:nacttac_summerofcode3/ai_screen.dart';
 class AiProductDetailScreen extends StatelessWidget {
   final Product product;
 
-  const AiProductDetailScreen({Key? key, required this.product}) : super(key: key);
+  const AiProductDetailScreen({Key? key, required this.product})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFAFAFA),
+      //Talha Iqbal
       body: Stack(
         children: [
           // Background Gradient (top half)
@@ -29,12 +31,15 @@ class AiProductDetailScreen extends StatelessWidget {
               ),
             ),
           ),
-          
+
           // Custom Back Drop
           Positioned(
             top: MediaQuery.of(context).padding.top + 10,
             left: 16,
-            child: _buildGlassyButton(Icons.arrow_back_ios_new, () => Navigator.pop(context)),
+            child: _buildGlassyButton(
+              Icons.arrow_back_ios_new,
+              () => Navigator.pop(context),
+            ),
           ),
           Positioned(
             top: MediaQuery.of(context).padding.top + 10,
@@ -52,10 +57,7 @@ class AiProductDetailScreen extends StatelessWidget {
               tag: 'product_image_${product.title}',
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.network(
-                  product.imageUrl,
-                  fit: BoxFit.cover,
-                ),
+                child: Image.network(product.imageUrl, fit: BoxFit.cover),
               ),
             ),
           ),
@@ -65,7 +67,9 @@ class AiProductDetailScreen extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            height: MediaQuery.of(context).size.height * 0.45, // Box sitting at the bottom
+            height:
+                MediaQuery.of(context).size.height *
+                0.45, // Box sitting at the bottom
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 36),
               decoration: const BoxDecoration(
@@ -79,7 +83,7 @@ class AiProductDetailScreen extends StatelessWidget {
                     color: Colors.black12,
                     blurRadius: 30,
                     offset: Offset(0, -10),
-                  )
+                  ),
                 ],
               ),
               child: Column(
@@ -117,16 +121,36 @@ class AiProductDetailScreen extends StatelessWidget {
                   // Rating Dummy Row
                   Row(
                     children: [
-                      const Icon(Icons.star_rounded, color: Color(0xFFFFB703), size: 22),
-                      const Icon(Icons.star_rounded, color: Color(0xFFFFB703), size: 22),
-                      const Icon(Icons.star_rounded, color: Color(0xFFFFB703), size: 22),
-                      const Icon(Icons.star_rounded, color: Color(0xFFFFB703), size: 22),
-                      const Icon(Icons.star_half_rounded, color: Color(0xFFFFB703), size: 22),
+                      const Icon(
+                        Icons.star_rounded,
+                        color: Color(0xFFFFB703),
+                        size: 22,
+                      ),
+                      const Icon(
+                        Icons.star_rounded,
+                        color: Color(0xFFFFB703),
+                        size: 22,
+                      ),
+                      const Icon(
+                        Icons.star_rounded,
+                        color: Color(0xFFFFB703),
+                        size: 22,
+                      ),
+                      const Icon(
+                        Icons.star_rounded,
+                        color: Color(0xFFFFB703),
+                        size: 22,
+                      ),
+                      const Icon(
+                        Icons.star_half_rounded,
+                        color: Color(0xFFFFB703),
+                        size: 22,
+                      ),
                       const SizedBox(width: 8),
                       Text(
                         '4.8 (124 reviews)',
                         style: TextStyle(
-                          color: Colors.black.withOpacity(0.5), 
+                          color: Colors.black.withOpacity(0.5),
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                         ),
@@ -186,7 +210,11 @@ class AiProductDetailScreen extends StatelessWidget {
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.shopping_bag_outlined, color: Colors.white, size: 24),
+                          Icon(
+                            Icons.shopping_bag_outlined,
+                            color: Colors.white,
+                            size: 24,
+                          ),
                           SizedBox(width: 12),
                           Text(
                             'Add to Cart',
@@ -222,7 +250,10 @@ class AiProductDetailScreen extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.2),
               shape: BoxShape.circle,
-              border: Border.all(color: Colors.white.withOpacity(0.4), width: 1),
+              border: Border.all(
+                color: Colors.white.withOpacity(0.4),
+                width: 1,
+              ),
             ),
             child: Icon(icon, color: Colors.white, size: 22),
           ),
